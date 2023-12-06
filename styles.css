@@ -1,0 +1,226 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  background: #181818; 
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #0F0F0F; 
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  width: 100%;
+}
+
+.menu-icon {
+  font-size: 24px; 
+  cursor: pointer;
+}
+
+.logo img {
+  height: 50px; 
+  margin-right: 150px; 
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  flex-basis: 600px; 
+  margin: 0 20px; 
+  margin-right: 500px;
+}
+
+.search-bar input {
+  width: 100%; 
+  background: #424242;
+  border: 1px solid #303030;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 2px;
+}
+
+.search-bar button {
+  padding: 5px;
+  background: #323232;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  margin-left: 5px; 
+}
+
+.user-controls {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin-left: 20px; 
+}
+
+.user-controls i {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+
+.main-container {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 20px;
+  padding: 20px;
+}
+
+
+
+.video-main video {
+  width: 100%; 
+  height: auto; 
+}
+
+.video-details {
+  color: white;
+}
+
+.video-stats {
+  color: #aaa;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+.video-actions {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.video-actions button {
+  background: none;
+  border: none;
+  color: white;
+  margin-right: 20px;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: color 0.2s ease;
+}
+
+.video-actions button:hover {
+  color: #bbb; /* Cambia el color al pasar el mouse */
+}
+
+.video-list {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(100px, auto)); /* Crea filas automáticas para cada miniatura */
+  gap: 10px;
+}
+
+.video-thumbnail {
+  display: flex;
+  align-items: center; /* Alinea verticalmente la imagen con el texto */
+  padding: 10px;
+  border-radius: 4px;
+  background: #121212;
+  margin-bottom: 10px; /* Separa las miniaturas entre sí */
+}
+
+.video-thumbnail img {
+  width: 150px; 
+  height: 80px;
+  border-radius: 4px;
+  margin-right: 10px; 
+}
+
+.video-info {
+  flex-grow: 1; 
+}
+
+.video-thumbnail h3 {
+  color: white;
+  font-size: 0.9em;
+  margin: 0; 
+}
+
+.video-thumbnail .video-stats {
+  color: #aaa;
+  font-size: 0.8em;
+  margin-top: 5px; 
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+
+  .video-list {
+    order: -1;
+  }
+
+  .menu-icon, .user-controls, .search-bar button {
+    display: none; /* Oculta elementos en pantallas pequeñas para simplificar la barra de navegación */
+  }
+
+  .logo img {
+    height: 20px; /* Reduce el tamaño del logo para pantallas pequeñas */
+    margin-right: 10px; /* Ajusta el margen a la derecha del logo */
+  }
+
+  .navbar {
+    justify-content: start; /* Alinea el logo a la izquierda en dispositivos móviles */
+  }
+
+  .search-bar {
+    width: calc(100% - 40px); /* Ajusta el ancho de la barra de búsqueda para dejar espacio a los lados */
+    margin: 0 20px; /* Añade un margen horizontal */
+  }
+
+  .search-bar input {
+    margin: 0; /* Elimina cualquier margen adicional que pueda haber */
+    max-width: none; /* Permite que el input de búsqueda ocupe todo el ancho disponible */
+  }
+
+  .video-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .video-actions button {
+    margin: 5px 0; /* Añade espacio entre los botones cuando están en columna */
+  }
+}
+
+/* Estilos para pantallas muy pequeñas, como móviles en modo retrato */
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-bar {
+    width: 100%; /* Permite que la barra de búsqueda ocupe todo el ancho disponible */
+    margin: 0; /* Elimina los márgenes para dispositivos muy pequeños */
+  }
+
+  .search-bar input {
+    padding: 5px; /* Ajusta el padding para mejorar la usabilidad en pantallas táctiles */
+  }
+
+  .video-main {
+    padding-bottom: 56.25%; /* Proporción para un video de 16:9 */
+    position: relative;
+  }
+
+  .video-main video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+}
